@@ -16,32 +16,34 @@
 
 
         <Grid.RowDefinitions>
-            <RowDefinition Height ="1*"/>
-            <RowDefinition Height ="1*"/>
-            <RowDefinition Height ="1*"/>
-            <RowDefinition Height ="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="ButtonOne" Content="1" Background="Azure"   Grid.Row="2"  Grid.Column="0"/>
-        <Button x:Name="ButtonTwo" Content="2"  Background="Azure"  Grid.Row="2"  Grid.Column="1"/>
-        <Button x:Name="ButtonThree" Content="3"  Background="Azure"  Grid.Row="2" Grid.Column="2"/>
-        <Button x:Name="ButtonFour" Content="4"  Background="Azure"  Grid.Row="3"  Grid.Column="0"/>
-        <Button x:Name="ButtonFive" Content="5" Background="Azure"   Grid.Row="3"  Grid.Column="1"/>
-        <Button x:Name="ButtonSix" Content="6" Background="Azure"   Grid.Row="3" Grid.Column="2"/>
-        <Button x:Name="ButtonSeven" Content="7" Background="Azure"   Grid.Row="4"  Grid.Column="0"/>
-        <Button x:Name="ButtonEight" Content="8" Background="Azure"   Grid.Row="4"  Grid.Column="1"/>
-        <Button x:Name="ButtonNine" Content="9" Background="Azure"   Grid.Row="4" Grid.Column="2"/>
-        <Button x:Name="ButtonZero" Content="0"  Grid.ColumnSpan="2" Grid.Row="5"  Grid.Column="0"/>
-        <TextBox Grid.ColumnSpan ="4" Grid.Row="0" TextWrapping="Wrap" Text="" TextAlignment="Right" Background="#FFEA9E9E" />
-        <Button x:Name="ButtonClear" Content="AC"  Grid.ColumnSpan="1" Grid.Row="1"  Grid.Column="0"/>
-        <Button x:Name="ButtonPlusMinus" Content="±"  Grid.ColumnSpan="1" Grid.Row="1"  Grid.Column="1"/>
-        <Button x:Name="ButtonPercent" Content="%"  Grid.ColumnSpan="1" Grid.Row="1"  Grid.Column="2"/>
-        <Button x:Name="ButtonDiv" Content="/"  Grid.ColumnSpan="4" Grid.Row="1" Grid.Column="3"/>
-        <Button x:Name="ButtonMultiply" Content="X"  Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="3"/>
-        <Button x:Name="ButtonSub" Content="-"  Grid.ColumnSpan="4" Grid.Row="3" Grid.Column="3"/>
-        <Button x:Name="ButtonPlus" Content="+"  Grid.ColumnSpan="4" Grid.Row="4" Grid.Column="3"/>
-        <Button x:Name="ButtonDot" Content="."  Grid.Row="5" Grid.Column="2"/>
-        <Button x:Name="ButtonEqals" Content="="  Grid.Row="5" Grid.Column="3"/>
+        <Button x:Name="ButtonOne" Content="1" Grid.Row="3" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonTwo" Content="2" Grid.Row="3" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonThree" Content="3" Grid.Row="3" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonFour" Content="4" Grid.Row="4" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonFive" Content="5" Grid.Row="4" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonSix" Content="6" Grid.Row="4" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonSeven" Content="7" Grid.Row="5" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonEight" Content="8" Grid.Row="5" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonNine" Content="9" Grid.Row="5" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonZero" Content="0" Grid.ColumnSpan="2" Grid.Row="6" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <TextBox x:Name="TextBoxSupport" Grid.ColumnSpan="4" Grid.Row="0" TextWrapping="Wrap" Text="" TextAlignment="Right" Background="LightSlateGray" FontSize="18"/>
+        <TextBox x:Name="TextBoxMain" Grid.ColumnSpan="4" Grid.Row="1" TextWrapping="Wrap" Text="" TextAlignment="Right" Background="Gray" FontSize="18"/>
+        <Button x:Name="ButtonClear" Content="AC" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="0" FontSize="36" Background="#FF933CB5" Click="ButtonClear_Click"/>
+        <Button x:Name="ButtonPlusMinus" Content="±" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="1" FontSize="36" Background="#FF933CB5"/>
+        <Button x:Name="ButtonPercent" Content="%" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="2" FontSize="36" Background="#FF933CB5"/>
+        <Button x:Name="ButtonDiv" Content="/" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="3" FontSize="36" Background="#FF933CB5"/>
+        <Button x:Name="ButtonMultiply" Content="X" Grid.ColumnSpan="4" Grid.Row="3" Grid.Column="3" FontSize="36" Background="#FF933CB5"/>
+        <Button x:Name="ButtonSub" Content="-" Grid.ColumnSpan="4" Grid.Row="4" Grid.Column="3" FontSize="36" Background="#FF933CB5"/>
+        <Button x:Name="ButtonPlus" Content="+" Grid.ColumnSpan="4" Grid.Row="5" Grid.Column="3" FontSize="36" Background="#FF933CB5" Click="ButtonPlus_Click"/>
+        <Button x:Name="ButtonDot" Content="." Grid.Row="6" Grid.Column="2" FontSize="36" Background="#FF933CB5"/>
+        <Button x:Name="ButtonEqals" Content="=" Grid.Row="6" Grid.Column="3" FontSize="36" Background="#FF933CB5" Click="ButtonEqals_Click"/>
     </Grid>
 </Window>
