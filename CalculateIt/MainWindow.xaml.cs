@@ -52,7 +52,7 @@ namespace CalculateIt
                 TextBoxMain.Text = "";
                 _previousOperation = "+";
                 
-            }
+            } 
             else
             {
                 _previousNumber = Convert.ToInt32(TextBoxMain.Text);
@@ -62,6 +62,27 @@ namespace CalculateIt
                 TextBoxMain.Text = "";
             }
 
+        }
+        private void ButtonSub_Click(object sender, RoutedEventArgs e)
+        {
+            if (_previousOperation == "=")
+            {
+                _previousNumber = int.Parse(TextBoxMain.Text);
+                _allNumber = _previousNumber;
+                TextBoxSupport.Text = $"{TextBoxMain.Text}-";
+
+                TextBoxMain.Text = "";
+                _previousOperation = "-";
+
+            }
+            else
+            {
+                _previousNumber = Convert.ToInt32(TextBoxMain.Text);
+                _previousOperation = "-";
+                TextBoxSupport.Text += $"{TextBoxMain.Text}-";
+                _allNumber -= _previousNumber;
+                TextBoxMain.Text = "";
+            }
         }
 
         private void ButtonEqals_Click(object sender, RoutedEventArgs e)
@@ -102,5 +123,7 @@ namespace CalculateIt
 
             return result;
         }
+
+
     }
 }
