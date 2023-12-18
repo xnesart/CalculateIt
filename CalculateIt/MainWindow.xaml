@@ -107,8 +107,8 @@
         <TextBox x:Name="TextBoxSupport" Grid.ColumnSpan="4" Grid.Row="0" TextWrapping="Wrap" Text="" TextAlignment="Right" Background="LightSlateGray" FontSize="18"/>
         <TextBox x:Name="TextBoxMain" Grid.ColumnSpan="4" Grid.Row="1" TextWrapping="Wrap" Text="" TextAlignment="Right" Background="Gray" FontSize="18"/>
         <Button x:Name="ButtonClear" Content="AC" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="0" FontSize="36" Background="#FFF1D200" Click="ButtonClear_Click"/>
-        <Button x:Name="ButtonPlusMinus" Content="±" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="1" FontSize="36" Background="#FFF1D200"/>
-        <Button x:Name="ButtonPercent" Content="%" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="2" FontSize="36" Background="#FFF1D200"/>
+        <Button x:Name="ButtonPlusMinus" Content="±" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="1" FontSize="36" Background="#FFF1D200" Click="ButtonPlusMinus_Click"/>
+        <Button x:Name="ButtonSqrt" Content="√" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="2" FontSize="36" Background="#FFF1D200" Click="ButtonSqrt_Click"/>
         <Button x:Name="ButtonDiv" Content="/" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="3" FontSize="36" Background="#FFF1D200" Click="ButtonDiv_Click"/>
         <Button x:Name="ButtonMultiply" Content="X" Grid.ColumnSpan="4" Grid.Row="3" Grid.Column="3" FontSize="36" Background="#FFF1D200" Click="ButtonMultiply_Click"/>
         <Button x:Name="ButtonSub" Content="-" Grid.ColumnSpan="4" Grid.Row="4" Grid.Column="3" FontSize="36" Background="#FFF1D200" Click="ButtonSub_Click"/>
