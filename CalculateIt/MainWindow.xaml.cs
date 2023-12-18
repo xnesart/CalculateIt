@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CalculateIt
@@ -48,7 +49,7 @@ namespace CalculateIt
             }
             else if (_previousOperation == "=")
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _allNumber = _previousNumber;
                 TextBoxSupport.Text = $"{TextBoxMain.Text}+";
 
@@ -58,7 +59,7 @@ namespace CalculateIt
             }
             else
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _previousOperation = "+";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}+";
                 _allNumber += _previousNumber;
@@ -70,7 +71,7 @@ namespace CalculateIt
         {
             if (_previousOperation == "=")
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _allNumber = _previousNumber;
                 TextBoxSupport.Text = $"{TextBoxMain.Text}-";
 
@@ -80,7 +81,7 @@ namespace CalculateIt
             }
             else
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _previousOperation = "-";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}-";
                 _allNumber += _previousNumber;
@@ -95,7 +96,7 @@ namespace CalculateIt
             }
             else if (_previousOperation == "=")
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _allNumber = _previousNumber;
                 TextBoxSupport.Text = $"{TextBoxMain.Text}*";
 
@@ -105,7 +106,7 @@ namespace CalculateIt
             }
             else if (_previousOperation is null || _previousOperation == "")
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _previousOperation = "*";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}*";
                 _allNumber = _previousNumber;
@@ -113,7 +114,7 @@ namespace CalculateIt
             }
             else
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _previousOperation = "*";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}*";
                 _allNumber *= _previousNumber;
@@ -128,7 +129,7 @@ namespace CalculateIt
             }
             else if (_previousOperation == "=")
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _allNumber = _previousNumber;
                 TextBoxSupport.Text = $"{TextBoxMain.Text}*";
 
@@ -138,7 +139,7 @@ namespace CalculateIt
             }
             else if (_previousOperation is null || _previousOperation == "")
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _previousOperation = "/";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}/";
                 _allNumber = _previousNumber;
@@ -146,7 +147,7 @@ namespace CalculateIt
             }
             else
             {
-                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
                 _previousOperation = "/";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}/";
                 _allNumber /= _previousNumber;
@@ -156,7 +157,7 @@ namespace CalculateIt
 
         private void ButtonEqals_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckPreviousOperationIsEqual())
+            if (_previousOperation == "=")
             {
                 TextBoxMain.Text = "";
                 TextBoxSupport.Text = "";
@@ -164,18 +165,18 @@ namespace CalculateIt
             if (_previousOperation == "+")
             {
                 TextBoxSupport.Text += $"{TextBoxMain.Text}=";
-                _allNumber += double.Parse(TextBoxMain.Text);
+                _allNumber += double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
 
-                TextBoxMain.Text = _allNumber.ToString();
+                TextBoxMain.Text = _allNumber.ToString(CultureInfo.InvariantCulture);
                 _previousOperation = "=";
                 _allNumber = 0;
             }
             if (_previousOperation == "-")
             {
                 TextBoxSupport.Text += $"{TextBoxMain.Text}=";
-                _allNumber -= double.Parse(TextBoxMain.Text);
+                _allNumber -= double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
 
-                TextBoxMain.Text = _allNumber.ToString();
+                TextBoxMain.Text = _allNumber.ToString(CultureInfo.InvariantCulture);
                 _previousOperation = "=";
                 _allNumber = 0;
             }
@@ -183,9 +184,9 @@ namespace CalculateIt
             {
                 TextBoxSupport.Text += $"{TextBoxMain.Text}=";
 
-                _allNumber *= double.Parse(TextBoxMain.Text);
+                _allNumber *= double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
 
-                TextBoxMain.Text = _allNumber.ToString();
+                TextBoxMain.Text = _allNumber.ToString(CultureInfo.InvariantCulture);
                 _previousOperation = "=";
                 _allNumber = 0;
             }
@@ -193,9 +194,9 @@ namespace CalculateIt
             {
                 TextBoxSupport.Text += $"{TextBoxMain.Text}=";
 
-                _allNumber /= double.Parse(TextBoxMain.Text);
+                _allNumber /= double.Parse(TextBoxMain.Text, CultureInfo.InvariantCulture);
 
-                TextBoxMain.Text = _allNumber.ToString();
+                TextBoxMain.Text = _allNumber.ToString(CultureInfo.InvariantCulture);
                 _previousOperation = "=";
                 _allNumber = 0;
             }
@@ -210,17 +211,17 @@ namespace CalculateIt
             TextBoxSupport.Text = "";
         }
 
-        private bool CheckPreviousOperationIsEqual()
+
+        private void ButtonDot_Click(object sender, RoutedEventArgs e)
         {
-            bool result = false;
-            if (_previousOperation == "=")
+            if(TextBoxMain.Text == "")
             {
-                result = true;
+                TextBoxMain.Text = "0.";
             }
-
-            return result;
+            else
+            {
+                TextBoxMain.Text += ".";
+            }
         }
-
-
     }
 }

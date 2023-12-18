@@ -24,16 +24,86 @@
             <RowDefinition Height ="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="ButtonOne" Content="1" Grid.Row="3" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonTwo" Content="2" Grid.Row="3" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonThree" Content="3" Grid.Row="3" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonFour" Content="4" Grid.Row="4" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonFive" Content="5" Grid.Row="4" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonSix" Content="6" Grid.Row="4" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonSeven" Content="7" Grid.Row="5" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonEight" Content="8" Grid.Row="5" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonNine" Content="9" Grid.Row="5" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
-        <Button x:Name="ButtonZero" Content="0" Grid.ColumnSpan="2" Grid.Row="6" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click"/>
+        <Button x:Name="ButtonOne" Content="1" Grid.Row="3" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonTwo" Content="2" Grid.Row="3" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonThree" Content="3" Grid.Row="3" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonFour" Content="4" Grid.Row="4" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonFive" Content="5" Grid.Row="4" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonSix" Content="6" Grid.Row="4" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonSeven" Content="7" Grid.Row="5" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonEight" Content="8" Grid.Row="5" Grid.Column="1" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonNine" Content="9" Grid.Row="5" Grid.Column="2" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ButtonZero" Content="0" Grid.ColumnSpan="2" Grid.Row="6" Grid.Column="0" FontSize="36" Background="#FF7FE648" Click="ButtonNumber_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFB2121" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
         <TextBox x:Name="TextBoxSupport" Grid.ColumnSpan="4" Grid.Row="0" TextWrapping="Wrap" Text="" TextAlignment="Right" Background="LightSlateGray" FontSize="18"/>
         <TextBox x:Name="TextBoxMain" Grid.ColumnSpan="4" Grid.Row="1" TextWrapping="Wrap" Text="" TextAlignment="Right" Background="Gray" FontSize="18"/>
         <Button x:Name="ButtonClear" Content="AC" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="0" FontSize="36" Background="#FFF1D200" Click="ButtonClear_Click"/>
@@ -43,7 +113,7 @@
         <Button x:Name="ButtonMultiply" Content="X" Grid.ColumnSpan="4" Grid.Row="3" Grid.Column="3" FontSize="36" Background="#FFF1D200" Click="ButtonMultiply_Click"/>
         <Button x:Name="ButtonSub" Content="-" Grid.ColumnSpan="4" Grid.Row="4" Grid.Column="3" FontSize="36" Background="#FFF1D200" Click="ButtonSub_Click"/>
         <Button x:Name="ButtonPlus" Content="+" Grid.ColumnSpan="4" Grid.Row="5" Grid.Column="3" FontSize="36" Background="#FFF1D200" Click="ButtonPlus_Click"/>
-        <Button x:Name="ButtonDot" Content="." Grid.Row="6" Grid.Column="2" FontSize="36" Background="#FFF1D200"/>
+        <Button x:Name="ButtonDot" Content="." Grid.Row="6" Grid.Column="2" FontSize="36" Background="#FFF1D200" Click="ButtonDot_Click"/>
         <Button x:Name="ButtonEqals" Content="=" Grid.Row="6" Grid.Column="3" FontSize="36" Background="#FFF1D200" Click="ButtonEqals_Click"/>
     </Grid>
 </Window>
