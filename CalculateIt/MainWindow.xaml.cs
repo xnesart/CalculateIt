@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace CalculateIt
@@ -14,14 +13,14 @@ namespace CalculateIt
             InitializeComponent();
         }
 
-        private decimal _previousNumber;
+        private double _previousNumber;
         private string _previousOperation;
-        private decimal _allNumber;
+        private double _allNumber;
         private bool _IsWrite;
 
         private void ButtonNumber_Click(object sender, RoutedEventArgs e)
         {
-            if(CheckPreviousOperationIsEqual())
+            if (_previousOperation == "=")
             {
                 TextBoxMain.Text = "";
                 _previousOperation = "";
@@ -43,19 +42,23 @@ namespace CalculateIt
 
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (_previousOperation == "=")
+            if (TextBoxSupport.Text == "" && TextBoxMain.Text == "")
             {
-                _previousNumber = int.Parse(TextBoxMain.Text);
+
+            }
+            else if (_previousOperation == "=")
+            {
+                _previousNumber = double.Parse(TextBoxMain.Text);
                 _allNumber = _previousNumber;
                 TextBoxSupport.Text = $"{TextBoxMain.Text}+";
-                
+
                 TextBoxMain.Text = "";
                 _previousOperation = "+";
-                
-            } 
+
+            }
             else
             {
-                _previousNumber = Convert.ToInt32(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text);
                 _previousOperation = "+";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}+";
                 _allNumber += _previousNumber;
@@ -67,7 +70,7 @@ namespace CalculateIt
         {
             if (_previousOperation == "=")
             {
-                _previousNumber = int.Parse(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text);
                 _allNumber = _previousNumber;
                 TextBoxSupport.Text = $"{TextBoxMain.Text}-";
 
@@ -77,10 +80,76 @@ namespace CalculateIt
             }
             else
             {
-                _previousNumber = Convert.ToInt32(TextBoxMain.Text);
+                _previousNumber = double.Parse(TextBoxMain.Text);
                 _previousOperation = "-";
                 TextBoxSupport.Text += $"{TextBoxMain.Text}-";
-                _allNumber -= _previousNumber;
+                _allNumber += _previousNumber;
+                TextBoxMain.Text = "";
+            }
+        }
+        private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBoxSupport.Text == "" && TextBoxMain.Text == "")
+            {
+
+            }
+            else if (_previousOperation == "=")
+            {
+                _previousNumber = double.Parse(TextBoxMain.Text);
+                _allNumber = _previousNumber;
+                TextBoxSupport.Text = $"{TextBoxMain.Text}*";
+
+                TextBoxMain.Text = "";
+                _previousOperation = "*";
+
+            }
+            else if (_previousOperation is null || _previousOperation == "")
+            {
+                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousOperation = "*";
+                TextBoxSupport.Text += $"{TextBoxMain.Text}*";
+                _allNumber = _previousNumber;
+                TextBoxMain.Text = "";
+            }
+            else
+            {
+                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousOperation = "*";
+                TextBoxSupport.Text += $"{TextBoxMain.Text}*";
+                _allNumber *= _previousNumber;
+                TextBoxMain.Text = "";
+            }
+        }
+        private void ButtonDiv_Click(object sender, RoutedEventArgs e)
+        {
+            if(TextBoxSupport.Text == "" && TextBoxMain.Text == "")
+            {
+
+            }
+            else if (_previousOperation == "=")
+            {
+                _previousNumber = double.Parse(TextBoxMain.Text);
+                _allNumber = _previousNumber;
+                TextBoxSupport.Text = $"{TextBoxMain.Text}*";
+
+                TextBoxMain.Text = "";
+                _previousOperation = "/";
+
+            }
+            else if (_previousOperation is null || _previousOperation == "")
+            {
+                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousOperation = "/";
+                TextBoxSupport.Text += $"{TextBoxMain.Text}/";
+                _allNumber = _previousNumber;
+                TextBoxMain.Text = "";
+            }
+            else
+            {
+                _previousNumber = double.Parse(TextBoxMain.Text);
+                _previousOperation = "/";
+                TextBoxSupport.Text += $"{TextBoxMain.Text}/";
+                _allNumber /= _previousNumber;
                 TextBoxMain.Text = "";
             }
         }
@@ -95,13 +164,41 @@ namespace CalculateIt
             if (_previousOperation == "+")
             {
                 TextBoxSupport.Text += $"{TextBoxMain.Text}=";
+                _allNumber += double.Parse(TextBoxMain.Text);
+
+                TextBoxMain.Text = _allNumber.ToString();
+                _previousOperation = "=";
+                _allNumber = 0;
             }
-            _allNumber += int.Parse(TextBoxMain.Text);
+            if (_previousOperation == "-")
+            {
+                TextBoxSupport.Text += $"{TextBoxMain.Text}=";
+                _allNumber -= double.Parse(TextBoxMain.Text);
 
-            TextBoxMain.Text = _allNumber.ToString();
-            _previousOperation = "=";
-            _allNumber = 0;
+                TextBoxMain.Text = _allNumber.ToString();
+                _previousOperation = "=";
+                _allNumber = 0;
+            }
+            if (_previousOperation == "*")
+            {
+                TextBoxSupport.Text += $"{TextBoxMain.Text}=";
 
+                _allNumber *= double.Parse(TextBoxMain.Text);
+
+                TextBoxMain.Text = _allNumber.ToString();
+                _previousOperation = "=";
+                _allNumber = 0;
+            }
+            if (_previousOperation == "/")
+            {
+                TextBoxSupport.Text += $"{TextBoxMain.Text}=";
+
+                _allNumber /= double.Parse(TextBoxMain.Text);
+
+                TextBoxMain.Text = _allNumber.ToString();
+                _previousOperation = "=";
+                _allNumber = 0;
+            }
         }
 
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
@@ -116,7 +213,7 @@ namespace CalculateIt
         private bool CheckPreviousOperationIsEqual()
         {
             bool result = false;
-            if(_previousOperation == "=")
+            if (_previousOperation == "=")
             {
                 result = true;
             }
